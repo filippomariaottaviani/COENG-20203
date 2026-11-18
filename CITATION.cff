@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite the associated manuscript and identify the repository version or commit used."
+type: dataset
+title: "Supplemental materials for Mapping Methods and Applications in Construction Project Management Analytics"
+authors:
+  - family-names: "Ottaviani"
+    given-names: "Filippo Maria"
+  - family-names: "Castelblanco"
+    given-names: "Gabriel"
+  - family-names: "Narbaev"
+    given-names: "Timur"
+  - family-names: "De Marco"
+    given-names: "Alberto"
+version: "2026-11-18"
+abstract: "Supplemental materials for manuscript COENG-20203: the contextual-coding prompt (S1), a filterable map of 1,387 retained paper-specific links with source passages and annual family-share data (S2), and annual analytical-family-share figures for 2015-2025 (S3)."

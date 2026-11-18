@@ -1,0 +1,144 @@
+Supplemental Material S1
+Coding prompt for the contextual A-B-C coding
+
+Manuscript: Mapping Methods and Applications in Construction Project Management Analytics
+Journal of Construction Engineering and Management, manuscript COENG-20203
+
+GPT-6 (OpenAI), in its Pro setting through the ChatGPT interface, received the prompt
+below once, in a new conversation, together with a file of the 780 included records
+(PAPER_KEY, TITLE, ABSTRACT). The coding it returned is used exactly as returned
+(see Contextual Coding of Applied Links in the manuscript). The message under
+"RESUME MESSAGE" was to be sent, unchanged, only if the model stopped before the
+last abstract; it was not needed, because the model completed all 780 abstracts without stopping.
+
+================================================================================
+PROMPT
+================================================================================
+TASK
+You will receive included abstracts from a systematic review of construction project management analytics. For each abstract, identify every paper-specific A–B–C pathway that the abstract reports: a method (A), applied to a performance domain (B), for a management purpose (C). Report how many pathways each abstract contains, and give the pathways.
+
+A pathway is accepted only when the abstract describes the actual application, implementation, testing, or evaluation of the named method or practice, in that study, for that purpose and domain. Do not accept methods that are only mentioned, only proposed, planned, recommended, or assumed to be useful. Do not accept a pathway that depends on general knowledge rather than on what the abstract reports.
+
+INPUT AND INDEPENDENCE
+The attached file has three columns: PAPER_KEY, TITLE, ABSTRACT. Read each abstract on its own. Use only the title and abstract text and the instructions in this message. Do not use outside knowledge about the paper, its authors, or its journal. Do not open, search, or use any other file, earlier conversation, memory, or workspace document, and do not compare your results with any other coding.
+
+BATCHES (run all of them without waiting for me)
+Process all 780 abstracts in 16 consecutive batches of 50, in file order: 1–50, 51–100, 101–150, ..., 701–750, 751–780.
+- Before starting each batch, re-read the EVIDENCE TIER and OUT-OF-TAXONOMY sections of this message and apply them exactly as written. Apply the same rules in every batch; do not change how you apply any rule as the work proceeds, and do not adjust later batches to resemble earlier ones.
+- When a batch is finished, save it as a downloadable file named coding_<first>_<last>.json (for example coding_001_050.json), then start the next batch immediately. Do not stop, summarize, or ask me whether to continue between batches.
+- After batch 751–780, write coding_001_780_all.json, containing all 780 records in input order, and give me download links for all 17 files. Then report, for each batch: abstracts, accepted pathways, DIRECT, CONTEXTUAL, uncertain, proposed, and out-of-taxonomy entries.
+- If you must stop before abstract 780 because of a length or time limit, first save every completed batch as a file, then end your reply with exactly this line: STOPPED AFTER ABSTRACT <number>. Never leave a batch half-saved.
+
+TAXONOMY (use these exact labels)
+
+A. Method or practice (15)
+ 1 STATISTICAL & ECONOMETRIC
+ 2 MACHINE LEARNING & DEEP LEARNING
+ 3 PROBABILISTIC & BAYESIAN
+ 4 FUZZY & GREY SYSTEMS
+ 5 KNOWLEDGE-BASED & SYMBOLIC
+ 6 SIMULATION & SYSTEM DYNAMICS
+ 7 OPTIMIZATION & METAHEURISTICS
+ 8 MULTI-CRITERIA DECISION ANALYSIS
+ 9 NETWORK & SCHEDULE ANALYSIS
+10 EXPERT JUDGMENT & CAUSAL STRUCTURING
+11 PRACTICE: EARNED VALUE & PERFORMANCE CONTROL
+12 PRACTICE: LEAN PRODUCTION
+13 PRACTICE: QUALITY MANAGEMENT & SIX SIGMA
+14 PRACTICE: VALUE MANAGEMENT
+15 PRACTICE: PROJECT DELIVERY SYSTEMS
+
+B. Performance domain (12)
+ 1 COST & BUDGET
+ 2 TIME & SCHEDULE
+ 3 RISK & UNCERTAINTY
+ 4 PRODUCTIVITY & PERFORMANCE
+ 5 QUALITY & DEFECTS
+ 6 SAFETY & HEALTH
+ 7 RESOURCES & SUPPLY CHAIN
+ 8 WORKFORCE & STAKEHOLDERS
+ 9 SUSTAINABILITY & ENERGY
+10 DESIGN & CONSTRUCTABILITY
+11 CONTRACTS & GOVERNANCE
+12 ASSET & MAINTENANCE
+
+C. Management purpose (11)
+ 1 ESTIMATION & FORECASTING
+ 2 PLANNING & SCHEDULING
+ 3 RESOURCE ALLOCATION
+ 4 MONITORING & PROGRESS CONTROL
+ 5 RISK & SAFETY ASSESSMENT
+ 6 PERFORMANCE EVALUATION & BENCHMARKING
+ 7 SELECTION & PROCUREMENT
+ 8 DIAGNOSIS & CAUSAL ANALYSIS
+ 9 DESIGN & CONFIGURATION
+10 QUALITY & COMPLIANCE INSPECTION
+11 KNOWLEDGE & COORDINATION
+
+METHOD-TO-FAMILY CROSSWALK (use it to assign each method's family, A 1–10)
+Statistical and econometric (1): SEM, regression, PLS-SEM, EFA, linear regression, PCA, time series, logistic regression, confirmatory factor analysis, qualitative comparative analysis, SNA, statistical process control, correspondence analysis, difference-in-differences, LASSO, latent class analysis, survival analysis
+ML/DL (2): neural network, gradient boosting, random forest, decision tree, SVM, CNN, LSTM, clustering, k-NN, SHAP, transformer, process mining, reinforcement learning, BERT, k-means, TF-IDF, RAG, transfer learning, AdaBoost, association rule mining, GAN, graph neural network, NGBoost, RNN, topic modeling, attention mechanism, autoencoder, CatBoost, extra trees, GRU, knowledge distillation, LIME, PPO, Q-learning, word embedding
+Probabilistic and Bayesian (3): Bayesian network, Bayesian inference, Markov chain, APRAM, Dempster–Shafer, naive Bayes, matrix weighting data fusion, MCMC
+Fuzzy and grey (4): fuzzy logic, fuzzy comprehensive evaluation, ANFIS, fuzzy cognitive map, grey relational analysis, fuzzy clustering, set pair analysis
+Knowledge-based and symbolic (5): expert system, case-based reasoning, ontology, knowledge graph, knowledge-based system, rule-based reasoning, rule-based system
+Simulation and system dynamics (6): simulation, Monte Carlo simulation, discrete event simulation, agent-based modeling, system dynamics, decision aids for tunneling
+Optimization and metaheuristics (7): genetic algorithm, particle swarm, ant colony, linear programming, constraint programming, game theory, integer programming, opposition-based learning, MILP, simulated annealing, teaching-learning-based optimization, Jaya, multi-objective programming, robust optimization, stochastic optimization, artificial bee colony, artificial satellite search, bi-level programming, differential evolution, dragonfly, firefly, grey wolf, locust swarm, moth-flame, whale optimization
+Multi-criteria decision analysis (8): AHP, data envelopment analysis, TOPSIS, ANP, MAUT, PROMETHEE, entropy weighting, weighted sum method, ELECTRE, evidential reasoning, SAW, ARAS, coefficient-of-variation weighting, G1 method, matter-element extension, rapid impact assessment matrix
+Network and schedule analysis (9): CPM, resource-constrained project scheduling, PERT, line of balance, location-based management, linear scheduling method, repetitive scheduling method, window delay analysis, CCPM, least-cost scheduling
+Expert judgment and causal structuring (10): relative importance index, Pareto analysis, DEMATEL, interpretive structural modeling, fishbone diagram, FMEA, MICMAC, five whys, Garrett ranking, SWOT analysis
+Practices: earned value / EVM, balanced scorecard (11); lean, JIT, value stream mapping, takt planning, target value design, visual management, 5S, kanban, obeya, theory of constraints (12); TQM, Six Sigma, QFD (13); value engineering (14); IPD (15)
+If a method is not in this list, assign its family from its description and set "family_from_crosswalk": false.
+
+EVIDENCE TIER (apply literally)
+- "DIRECT": a single sentence of the abstract names the method and states both the domain and the purpose. Give exactly one quote: that sentence.
+- "CONTEXTUAL": no single sentence does this, and the link needs two or three adjacent sentences. Give those two or three sentences as separate quotes.
+- Never give more than one quote for a DIRECT pathway, and never fewer than two for a CONTEXTUAL pathway.
+
+WHAT TO RECORD FOR EACH ACCEPTED PATHWAY
+- "A", "B", "C": the exact labels above, with the numeric indices.
+- "tier": as defined above.
+- "method_names": the method or methods as named in the abstract.
+- "applied_action": one sentence in English stating what the study did with the method for this purpose and domain.
+- "evidence_quotes": passages copied exactly, character for character, from the abstract (no paraphrase, no added punctuation, no changed capitalization). Each quote must be a substring of the abstract.
+- "confidence": a number from 0 to 1 for how clearly the abstract supports the pathway.
+- "family_from_crosswalk": true or false, as above.
+
+WHAT TO RECORD SEPARATELY (not counted)
+- "uncertain": a candidate you could not decide, with the reason.
+- "proposed": a use the authors propose, plan, or recommend but do not carry out. Give the A/B/C labels and the quote.
+- Do not place these in "accepted".
+
+OUT-OF-TAXONOMY TERMS
+If the abstract applies a method, performance domain, or management purpose that does not fit any label above, do not force it into a label and do not count it as accepted. Record it in "out_of_taxonomy":
+- "slot": "A", "B", or "C", the dimension the term would occupy.
+- "term": the term as written in the abstract, copied exactly.
+- "evidence_quote": a verbatim quote from the abstract.
+- "closest_label": the nearest existing label, or "none".
+- "reason": one sentence on why no label fits.
+Record only terms that the abstract applies, in the same way as an accepted pathway. Do not record terms that are only background, proposed, or mentioned.
+
+OUTPUT
+Return one JSON object per abstract, in input order, with exactly these keys:
+{
+  "PAPER_KEY": "...",
+  "accepted_count": 0,
+  "accepted": [
+    {"A": "...", "A_index": 0, "B": "...", "B_index": 0, "C": "...", "C_index": 0,
+     "tier": "DIRECT|CONTEXTUAL", "confidence": 0.0, "family_from_crosswalk": true,
+     "method_names": ["..."], "applied_action": "...", "evidence_quotes": ["..."]}
+  ],
+  "uncertain": [{"A": "...", "B": "...", "C": "...", "reason": "...", "evidence_quote": "..."}],
+  "proposed": [{"A": "...", "B": "...", "C": "...", "evidence_quote": "..."}],
+  "out_of_taxonomy": [{"slot": "A|B|C", "term": "...", "evidence_quote": "...", "closest_label": "...", "reason": "..."}]
+}
+If an abstract has no accepted pathway, return "accepted_count": 0 and an empty "accepted" list, and give a short "zero_reason" (for example, "methods mentioned only as background" or "no method named").
+Return only the JSON array in the file, with no commentary inside it.
+
+Process the abstracts exactly as given. Do not skip, merge, or reorder them. Do not count the same pathway twice within an abstract.
+
+Start now with abstracts 1–50 and continue through abstract 780.
+
+================================================================================
+RESUME MESSAGE
+================================================================================
+Continue from the abstract after the one in your STOPPED line, in batches of 50, applying exactly the rules of my first message. Re-read its EVIDENCE TIER and OUT-OF-TAXONOMY sections before each batch: one quote for DIRECT, two or three for CONTEXTUAL. Use only the attached abstracts file. Save each batch as a file and carry on without waiting for me until abstract 780, then write coding_001_780_all.json and the per-batch report.
